@@ -102,6 +102,10 @@ $csvFilePath = ".\BulkInviteGuestUsersToAzureEntraID.csv" #Path to the CSV file 
 # $emailAddresses = @("InviteeBoss@thiscorp.com", "YourBoss@that corp.com")
 $emailAddresses = $Null
 
+do {
+    $tenantId = $(Write-host -ForegroundColor green "❓ Enter your Azure Tenant ID (GUID format): " -NoNewline; Read-Host).Trim()
+    Write-Host -ForegroundColor green "👉 The provided Tenant ID is: $tenantId"
+} while (-not $tenantId -or -not ($tenantId -match '^[0-9a-fA-F\-]{36}$'))
 #Test-GraphConnection -TenantID $TenantID -Scopes $Scopes #To leverage user login
 Test-GraphConnection -TenantID $TenantID -Scopes $Scopes -UseDeviceLogin #To leverage  device login
 
