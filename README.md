@@ -143,5 +143,5 @@ This script is provided as-is without warranty. Use it at your own risk. Feel fr
 
 ## ✍️ Author
 
-*Your Name Here*  
+Didier Van Hoye
 Contributions welcome!
